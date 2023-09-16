@@ -7,8 +7,6 @@ function getComputerChoice() {
 
 let computerSelection  = getComputerChoice();
 
-let playerChoice = prompt('enter you keyword here');
-playerSelection = playerChoice.toLowerCase();
 
 function playRound (computerSelection, playerSelection) {
     if (playerSelection === computerSelection){
@@ -24,6 +22,19 @@ function playRound (computerSelection, playerSelection) {
     }
     
 } 
-let result = playRound(computerSelection, playerSelection);
-console.log( `Since you've chosen ${playerChoice} and the computer has chosen ${computerSelection}.
-Therefore, ${result}.`)
+// let result = playRound(computerSelection, playerSelection);
+// console.log( `Since you've chosen ${playerChoice} and the computer has chosen ${computerSelection}.
+// Therefore, ${result}.`)
+
+function game(){
+    for(let i = 0; i < 5; i++){
+        let playerChoice = prompt('Enter your keyword here (rock, paper, or scissor)');
+        playerSelection = playerChoice.toLowerCase();
+        computerSelection = getComputerChoice(); // Update computerSelection
+        result = playRound(computerSelection, playerSelection); // Update result
+        console.log(`Game ${i + 1}: Since you've chosen ${playerChoice} and the computer has chosen ${computerSelection}. Therefore, ${result}.`);
+    }
+}
+
+game();
+
